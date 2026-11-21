@@ -2,7 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import '../story/story.css';
 import { screens, chapters } from '../content';
 import Screen from '../story/Screen';
-import { Nav, ProgressBar, Rail } from '../components/Chrome';
+import Nav from '../components/Nav';
+import ProgressBar from '../components/ProgressBar';
+import Rail from '../components/Rail';
 import { useMinWidth } from '../hooks';
 import { About, Background, Contact, Experience, Hero, Overview, Stack } from '../sections/Sections';
 

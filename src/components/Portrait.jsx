@@ -1,86 +1,8 @@
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { useInView } from '../hooks';
-
-export function Reveal({ as: Tag = 'div', delay = 0, className = '', children, ...rest }) {
-  const [ref, seen] = useInView(0.12);
-  return (
-    <Tag
-      ref={ref}
-      className={`reveal ${seen ? 'is-in' : ''} ${className}`}
-      style={{ '--d': `${delay}ms` }}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  );
-}
-
-export function Magnetic({ as: Tag = 'a', strength = 0.28, className = '', children, ...rest }) {
-  const ref = useRef(null);
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return undefined;
-    const x = gsap.quickTo(node, 'x', { duration: 0.5, ease: 'power3.out' });
-    const y = gsap.quickTo(node, 'y', { duration: 0.5, ease: 'power3.out' });
-    const move = (event) => {
-      const box = node.getBoundingClientRect();
-      x((event.clientX - (box.left + box.width / 2)) * strength);
-      y((event.clientY - (box.top + box.height / 2)) * strength);
-    };
-    const leave = () => {
-      x(0);
-      y(0);
-    };
-    node.addEventListener('pointermove', move);
-    node.addEventListener('pointerleave', leave);
-    return () => {
-      node.removeEventListener('pointermove', move);
-      node.removeEventListener('pointerleave', leave);
-    };
-  }, [strength]);
-  return (
-    <Tag ref={ref} className={`magnetic ${className}`} {...rest}>
-      {children}
-    </Tag>
-  );
-}
-
-export function Counter({ value, suffix = '' }) {
-  const [ref, seen] = useInView(0.6);
-  const text = useRef(null);
-  useEffect(() => {
-    if (!seen || !text.current) return undefined;
-    const state = { n: 0 };
-    const tween = gsap.to(state, {
-      n: value,
-      duration: 1.6,
-      ease: 'power3.out',
-      onUpdate: () => {
-        if (text.current) text.current.textContent = Math.round(state.n);
-      },
-    });
-    return () => tween.kill();
-  }, [seen, value]);
-  return (
-    <span ref={ref} className="counter">
-      <span ref={text}>{seen ? 0 : value}</span>
-      {suffix}
-    </span>
-  );
-}
-
-export function Arrow() {
-  return (
-    <svg className="arrow" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-      <path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-export function Spin({ front, alt, label, back, reduced }) {
+export default function Portrait({ front, alt, label, back, reduced }) {
   const root = useRef(null);
   const body = useRef(null);
   const run = useRef(null);

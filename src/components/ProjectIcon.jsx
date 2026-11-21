@@ -81,10 +81,10 @@ function Branch() {
   );
 }
 
-const MOTIFS = { graph: Graph, route: Route, shield: Shield, plug: Plug, branch: Branch };
+const ICONS = { graph: Graph, route: Route, shield: Shield, plug: Plug, branch: Branch };
 
-export default function Motif({ name }) {
-  const Shape = MOTIFS[name] ?? Graph;
+export default function ProjectIcon({ name }) {
+  const Shape = ICONS[name] ?? Graph;
   return (
     <div className="motif" aria-hidden="true">
       <Shape />

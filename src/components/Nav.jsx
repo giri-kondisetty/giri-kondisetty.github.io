@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { profile, chapters } from '../content';
+import { useEffect, useState } from 'react';
+import { profile } from '../content';
 
 function Sun() {
   return (
@@ -26,7 +26,7 @@ function Bars({ open }) {
   );
 }
 
-export function Nav({ theme, onToggle, active, onJump, links, menu }) {
+export default function Nav({ theme, onToggle, active, onJump, links, menu }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -96,35 +96,4 @@ export function Nav({ theme, onToggle, active, onJump, links, menu }) {
       </nav>
     </header>
   );
-}
-
-export function Rail({ active, onJump, items = chapters }) {
-  return (
-    <nav className={`rail ${active === 'intro' ? 'rail--photo' : ''}`} aria-label="Chapters">
-      {items.map((c) => (
-        <a key={c.id} href={`#${c.id}`} onClick={(e) => onJump(e, c.id)} className={active === c.id ? 'is-active' : ''} aria-label={c.label}>
-          <span className="rail__label">{c.label}</span>
-          <span className="rail__dot" />
-        </a>
-      ))}
-    </nav>
-  );
-}
-
-export function ProgressBar() {
-  const ref = useRef(null);
-  useEffect(() => {
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        if (ref.current) ref.current.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
-      });
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-    return () => window.removeEventListener('scroll', update);
-  }, []);
-  return <div className="progress" ref={ref} aria-hidden="true" />;
 }

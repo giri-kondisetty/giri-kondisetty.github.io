@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { about, certifications, education, experience, profile, projects, skills } from '../content';
-import Motif from '../components/Motif';
-import { Arrow, Counter, Magnetic, Reveal, Spin } from '../components/ui';
+import ProjectIcon from '../components/ProjectIcon';
+import Arrow from '../components/Arrow';
+import Counter from '../components/Counter';
+import Magnetic from '../components/Magnetic';
+import Portrait from '../components/Portrait';
+import Reveal from '../components/Reveal';
 
 function Heading({ children }) {
   return (
@@ -85,7 +89,7 @@ export function About({ reduced }) {
     <section className="about chapter">
       <div className="about__grid">
         <Reveal className="about__photo">
-          <Spin front="profile.webp" alt="Portrait of Giri Kondisetty" label="Portrait of Giri Kondisetty. Drag, or use the left and right arrow keys, to rotate." back="GK" reduced={reduced} />
+          <Portrait front="profile.webp" alt="Portrait of Giri Kondisetty" label="Portrait of Giri Kondisetty. Drag, or use the left and right arrow keys, to rotate." back="GK" reduced={reduced} />
         </Reveal>
         <div className="about__copy">
           <Heading>
@@ -128,7 +132,7 @@ export function Overview({ onOpen }) {
       <ul className="pcards pcards--4">
         {projects.map((project, i) => (
           <Reveal as="li" key={project.id} className="pcard" delay={i * 80}>
-            <Motif name={project.motif} />
+            <ProjectIcon name={project.motif} />
             <p className="pcard__kind">{project.kind}</p>
             <h3>{project.title}</h3>
             <p>{project.text}</p>
