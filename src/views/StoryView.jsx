@@ -6,7 +6,13 @@ import Nav from '../components/Nav';
 import ProgressBar from '../components/ProgressBar';
 import Rail from '../components/Rail';
 import { useMinWidth } from '../hooks';
-import { About, Background, Contact, Experience, Hero, Overview, Stack } from '../sections/Sections';
+import About from '../sections/About';
+import Background from '../sections/Background';
+import Contact from '../sections/Contact';
+import Experience from '../sections/Experience';
+import Hero from '../sections/Hero';
+import Projects from '../sections/Projects';
+import Skills from '../sections/Skills';
 
 const LINKS = chapters.filter((c) => c.id !== 'intro');
 const FIRST = {};
@@ -240,9 +246,9 @@ export default function StoryView({ theme, toggleTheme, reduced, gl }) {
           if (s.kind === 'hero') return wrap(i, <Hero onJump={jump} />);
           if (s.kind === 'about') return wrap(i, <About reduced={reduced} />);
           if (s.kind === 'experience') return wrap(i, <Experience />, 'screen--stack');
-          if (s.kind === 'cards') return wrap(i, <Overview onOpen={open} />, 'screen--stack');
+          if (s.kind === 'projects') return wrap(i, <Projects onOpen={open} />, 'screen--stack');
           if (s.kind === 'background') return wrap(i, <Background />, 'screen--stack');
-          if (s.kind === 'stack') return wrap(i, <Stack />, 'screen--stack');
+          if (s.kind === 'skills') return wrap(i, <Skills />, 'screen--stack');
           if (s.kind === 'contact') return wrap(i, <Contact />);
           return <Screen key={s.id} screen={s} index={i} active={current === i} />;
         })}

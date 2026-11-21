@@ -146,7 +146,7 @@ export const screens = [
   { id: 'intro', group: 'intro', kind: 'hero', g: 0 },
   { id: 'about', group: 'about', kind: 'about', g: 1.3 },
   { id: 'experience', group: 'experience', kind: 'experience', g: 2.3 },
-  { id: 'projects', group: 'projects', kind: 'cards', g: 3.3 },
+  { id: 'projects', group: 'projects', kind: 'projects', g: 3.3 },
   {
     id: 'connectors',
     group: 'projects',
@@ -180,6 +180,6 @@ export const screens = [
     text: 'The last piece of the product reproduces a security finding in a throwaway container pinned to a specific commit. During the proof the container has no network and holds no credentials, and afterwards only approved hosts can be reached.',
   },
   { id: 'background', group: 'background', kind: 'background', g: 8.3 },
-  { id: 'stack', group: 'skills', kind: 'stack', g: 8.3 },
+  { id: 'skills', group: 'skills', kind: 'skills', g: 8.3 },
   { id: 'contact', group: 'contact', kind: 'contact', g: 9.3 },
 ];
