@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { useInView } from '../hooks';
+import useInView from '../hooks/useInView';
 
 export default function Counter({ value, suffix = '' }) {
   const [ref, seen] = useInView(0.6);
