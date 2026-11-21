@@ -5,7 +5,7 @@ export const profile = {
   role: 'Security engineer · AI systems',
   summary:
     'At work I build an AI security assistant. In my own time I build tools that show the evidence behind their answers.',
-  email: 'girik@bu.edu',
+  email: 'gkondisetty@gmail.com',
   github: 'https://github.com/giri-kondisetty',
   linkedin: 'https://www.linkedin.com/in/giri-kondisetty/',
   resume: null,
