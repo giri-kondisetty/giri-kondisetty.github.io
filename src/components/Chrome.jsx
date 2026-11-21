@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { profile, storyChapters } from '../data';
+import { profile, chapters } from '../content';
 
 function Sun() {
   return (
@@ -98,7 +98,7 @@ export function Nav({ theme, onToggle, active, onJump, links, menu }) {
   );
 }
 
-export function Rail({ active, onJump, items = storyChapters }) {
+export function Rail({ active, onJump, items = chapters }) {
   return (
     <nav className={`rail ${active === 'intro' ? 'rail--photo' : ''}`} aria-label="Chapters">
       {items.map((c) => (

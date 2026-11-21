@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { buildRandom, buildStoryShapes, orbitPoint } from './shapes';
+import { buildRandom, buildShapes, orbitPoint } from './shapes';
 import { PARTICLE_FRAG, PARTICLE_THEMES, PARTICLE_VERT } from './particleShader';
 
 const clamp01 = (x) => Math.min(Math.max(x, 0), 1);
@@ -136,7 +136,7 @@ function direction(i, n) {
 const span = (g, a, b, c, d) => smooth(a, b, g) * (1 - smooth(c, d, g));
 const at = (g, [first, last]) => span(g, first - 0.15, first + 0.3, last + 0.78, last + 1);
 
-export class StoryScene {
+export class Scene {
   constructor(canvas, { count, labelHost }) {
     this.labelHost = labelHost;
     this.target = 0;
@@ -183,7 +183,7 @@ export class StoryScene {
   }
 
   buildParticles(count) {
-    const shapes = buildStoryShapes(count);
+    const shapes = buildShapes(count);
     this.shapeAttrs = {};
     for (const key of Object.keys(shapes)) this.shapeAttrs[key] = new THREE.BufferAttribute(shapes[key], 3);
     const geometry = new THREE.BufferGeometry();

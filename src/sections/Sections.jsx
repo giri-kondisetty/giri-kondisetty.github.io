@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { about, certifications, education, experience, profile, projects, skills } from '../data';
+import { about, certifications, education, experience, profile, projects, skills } from '../content';
 import Motif from '../components/Motif';
 import { Arrow, Counter, Magnetic, Reveal, Spin } from '../components/ui';
 
@@ -28,8 +28,8 @@ export function Hero({ onJump }) {
     <section className="hero chapter">
       <figure className="hero__photo">
         <img
-          src="boston.webp"
-          srcSet="boston-1000.webp 1000w, boston.webp 2000w"
+          src="hero.webp"
+          srcSet="hero-1000.webp 1000w, hero.webp 2000w"
           sizes="100vw"
           alt="Boston University's Center for Computing & Data Sciences rising above the Charles River"
           width="2000"

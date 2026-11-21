@@ -176,7 +176,7 @@ function cosmos(n) {
   return out;
 }
 
-export function buildStoryShapes(n) {
+export function buildShapes(n) {
   return {
     sphere: scaled(sphere(n), 2.1),
     galaxy: scaled(galaxy(n, 0), 1.25),

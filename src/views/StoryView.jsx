@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import '../story/story.css';
-import { screens, storyChapters } from '../data';
+import { screens, chapters } from '../content';
 import Screen from '../story/Screen';
 import { Nav, ProgressBar, Rail } from '../components/Chrome';
 import { useMinWidth } from '../hooks';
 import { About, Background, Contact, Experience, Hero, Overview, Stack } from '../sections/Sections';
 
-const LINKS = storyChapters.filter((c) => c.id !== 'intro');
+const LINKS = chapters.filter((c) => c.id !== 'intro');
 const FIRST = {};
 screens.forEach((s, i) => {
   if (!(s.group in FIRST)) FIRST[s.group] = i;
@@ -46,10 +46,10 @@ export default function StoryView({ theme, toggleTheme, reduced, gl }) {
     let cancelled = false;
     let teardown = () => {};
 
-    import('../gl/StoryScene').then(({ StoryScene }) => {
+    import('../scene/Scene').then(({ Scene }) => {
       if (cancelled || !canvas.current) return;
       const light = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 1100;
-      const instance = new StoryScene(canvas.current, { count: light ? 8000 : 22000, labelHost: labels.current });
+      const instance = new Scene(canvas.current, { count: light ? 8000 : 22000, labelHost: labels.current });
       world.current = instance;
       instance.setTheme(document.documentElement.getAttribute('data-theme') || 'light');
       instance.start();
@@ -230,9 +230,9 @@ export default function StoryView({ theme, toggleTheme, reduced, gl }) {
         active={screen.group}
         onJump={jump}
         links={LINKS}
-        menu={storyChapters}
+        menu={chapters}
       />
-      <Rail active={screen.group} onJump={jump} items={storyChapters} />
+      <Rail active={screen.group} onJump={jump} items={chapters} />
       <main id="main" tabIndex={-1} className="story">
         {screens.map((s, i) => {
           if (s.kind === 'hero') return wrap(i, <Hero onJump={jump} />);

@@ -132,7 +132,7 @@ export const skills = [
   { group: 'Security and identity', items: ['Keycloak (SSO)', 'Vault', 'Sandboxing', 'SSRF defence', 'MITRE ATT&CK', 'Detection engineering'] },
   { group: 'Platforms I integrate', items: ['Splunk', 'CrowdStrike', 'Databricks', 'Elasticsearch', 'Neo4j', 'MongoDB', 'ServiceNow'] },
 ];
-export const storyChapters = [
+export const chapters = [
   { id: 'intro', label: 'Intro' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
