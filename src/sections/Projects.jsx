@@ -22,7 +22,7 @@ export default function Projects({ onOpen }) {
       <ul className="pcards pcards--4">
         {projects.map((project, i) => (
           <Reveal as="li" key={project.id} className="pcard" delay={i * 80}>
-            <ProjectIcon name={project.motif} />
+            <ProjectIcon name={project.icon} />
             <p className="pcard__kind">{project.kind}</p>
             <h3>{project.title}</h3>
             <p>{project.text}</p>

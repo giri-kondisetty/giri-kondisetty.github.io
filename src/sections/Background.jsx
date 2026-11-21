@@ -8,7 +8,7 @@ export default function Background() {
       <Heading>
         Education and <em>certifications.</em>
       </Heading>
-      <div className="bg">
+      <div className="background__body">
         <h3 className="mini">Education</h3>
         <ol className="rows">
           {education.map((item, i) => (
@@ -19,7 +19,7 @@ export default function Background() {
             </Reveal>
           ))}
         </ol>
-        <h3 className="mini bg__gap">Certifications</h3>
+        <h3 className="mini background__gap">Certifications</h3>
         <ul className="rows rows--two">
           {certifications.map((cert, i) => (
             <Reveal as="li" key={cert.title} className="rows__item rows__item--cert" delay={i * 50}>

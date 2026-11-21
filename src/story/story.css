@@ -24,13 +24,13 @@ html.snap {
   justify-content: center;
 }
 
-.screen--stack .chapter {
+.screen--tight .chapter {
   min-height: auto;
   padding-top: clamp(96px, 12vh, 120px);
   padding-bottom: clamp(48px, 8vh, 72px);
 }
 
-.story .scroll-cue {
+.page .scroll-cue {
   bottom: 28px;
 }
 
@@ -61,7 +61,7 @@ html.snap {
   color: color-mix(in srgb, var(--ink) 86%, transparent);
 }
 
-.storybar {
+.pager {
   position: fixed;
   right: var(--edge);
   bottom: 22px;
@@ -78,7 +78,7 @@ html.snap {
   animation: rise 0.6s var(--ease) both;
 }
 
-.storybar button {
+.pager button {
   display: grid;
   place-items: center;
   width: 36px;
@@ -92,12 +92,12 @@ html.snap {
   transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-.storybar button:hover:not(:disabled) {
+.pager button:hover:not(:disabled) {
   background: var(--ink);
   color: var(--bg);
 }
 
-.storybar button:disabled {
+.pager button:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }
@@ -132,11 +132,11 @@ html.snap {
   will-change: transform, opacity;
 }
 
-.story {
+.page {
   --card: rgba(252, 250, 246, 0.9);
 }
 
-:root[data-theme='dark'] .story {
+:root[data-theme='dark'] .page {
   --card: rgba(16, 18, 28, 0.88);
 }
 
@@ -146,66 +146,66 @@ html.snap {
   }
 }
 
-.story .screen--plain .chapter {
+.page .screen--plain .chapter {
   min-height: 100svh;
 }
 
 @media (max-height: 860px) {
-  .story .screen--plain .chapter {
+  .page .screen--plain .chapter {
     padding-top: 84px;
     padding-bottom: 56px;
   }
 
-  .story .about__grid {
+  .page .about__grid {
     gap: clamp(28px, 4vw, 56px);
   }
 
-  .story .about__photo {
+  .page .about__photo {
     width: min(100%, 250px);
   }
 
-  .story .about .h2 {
+  .page .about .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }
 
-  .story .about__copy .body {
+  .page .about__copy .body {
     margin-top: 12px;
     font-size: 1rem;
     line-height: 1.5;
   }
 
-  .story .about__copy .heading + .body {
+  .page .about__copy .heading + .body {
     margin-top: 18px;
   }
 
-  .story .stats {
+  .page .stats {
     margin-top: 22px;
     padding-top: 16px;
   }
 
-  .story .stats strong {
+  .page .stats strong {
     font-size: clamp(2.2rem, 3.4vw, 3rem);
   }
 
-  .story .stack .h2 {
+  .page .skills .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }
 
-  .story .contact .h2 {
+  .page .contact .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }
 
-  .story .contact__mail {
+  .page .contact__mail {
     font-size: clamp(2rem, 4.4vw, 3.6rem);
   }
 }
 
 @media (max-height: 700px) {
-  .story .about__photo {
+  .page .about__photo {
     width: min(100%, 200px);
   }
 
-  .story .about__copy .body:nth-of-type(2) {
+  .page .about__copy .body:nth-of-type(2) {
     display: none;
   }
 }
@@ -252,35 +252,35 @@ html.snap {
     font-size: clamp(1.75rem, 7.4vw, 2.4rem);
   }
 
-  .story .screen--plain .chapter {
+  .page .screen--plain .chapter {
     min-height: auto;
   }
 }
 
 @media (max-height: 860px) and (min-width: 1100px) {
-  .story .background .h2 {
+  .page .background .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }}
 
 @media (min-width: 1100px) {
-  .story .screen--plain .chapter:not(.hero) {
+  .page .screen--plain .chapter:not(.hero) {
     padding-left: var(--story-pad);
     padding-right: max(var(--story-pad), 140px);
   }
 }
 
-.motif {
+.project-icon {
   height: 124px;
 }
 
-.motif svg {
+.project-icon svg {
   display: block;
   width: 100%;
   height: 100%;
   overflow: visible;
 }
 
-.mo-flow {
+.pi-flow {
   fill: none;
   stroke: var(--accent);
   stroke-width: 1.7;
@@ -290,7 +290,7 @@ html.snap {
   animation-delay: calc(var(--i, 0) * -0.35s);
 }
 
-.mo-node {
+.pi-node {
   fill: var(--bg);
   stroke: var(--ink);
   stroke-width: 1.8;
@@ -300,7 +300,7 @@ html.snap {
   animation-delay: calc(var(--i, 0) * -0.5s);
 }
 
-.mo-lens {
+.pi-lens {
   fill: none;
   stroke: var(--accent);
   stroke-width: 3.2;
@@ -310,7 +310,7 @@ html.snap {
   animation: bob 4s ease-in-out infinite;
 }
 
-.mo-layer {
+.pi-layer {
   fill: color-mix(in srgb, var(--accent) 12%, transparent);
   stroke: var(--ink);
   stroke-width: 1.6;
@@ -353,7 +353,7 @@ html.snap {
   -webkit-backdrop-filter: blur(16px) saturate(140%);
 }
 
-.pcard .motif {
+.pcard .project-icon {
   height: clamp(84px, 13vh, 170px);
   margin-bottom: clamp(14px, 2.4vh, 28px);
 }
@@ -392,8 +392,8 @@ html.snap {
 }
 
 @media (max-height: 860px) and (min-width: 1100px) {
-  .story .overview .h2,
-  .story .open .h2 {
+  .page .overview .h2,
+  .page .open .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }
 
@@ -405,7 +405,7 @@ html.snap {
     padding: 16px 18px;
   }
 
-  .pcard .motif {
+  .pcard .project-icon {
     height: 78px;
     margin-bottom: 12px;
   }
@@ -518,12 +518,12 @@ html.snap {
 }
 
 @media (max-height: 760px) and (min-width: 1100px) {
-  .story .experience.chapter {
+  .page .experience.chapter {
     padding-top: 80px;
     padding-bottom: 40px;
   }
 
-  .story .experience .h2 {
+  .page .experience .h2 {
     font-size: clamp(2.25rem, 4vw, 3.25rem);
   }
 
@@ -540,15 +540,15 @@ html.snap {
   }
 }
 
-.bg {
+.background__body {
   margin-top: clamp(24px, 4.5vh, 48px);
 }
 
-.bg .mini {
+.background__body .mini {
   margin-bottom: 8px;
 }
 
-.bg__gap {
+.background__gap {
   margin-top: clamp(28px, 5vh, 52px);
 }
 
@@ -630,16 +630,16 @@ html.snap {
 }
 
 @media (max-height: 860px) and (min-width: 1100px) {
-  .story .background .h2,
-  .story .stack .h2 {
+  .page .background .h2,
+  .page .skills .h2 {
     font-size: clamp(2.5rem, 4.6vw, 4rem);
   }
 
-  .bg {
+  .background__body {
     margin-top: 20px;
   }
 
-  .bg__gap {
+  .background__gap {
     margin-top: 22px;
   }
 
@@ -693,7 +693,7 @@ html.snap {
 }
 
 @media (min-width: 1100px) {
-  .story .overview.chapter {
+  .page .overview.chapter {
     padding-top: clamp(92px, 11vh, 120px);
     padding-bottom: clamp(40px, 6vh, 64px);
   }

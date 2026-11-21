@@ -9,12 +9,12 @@ function Graph() {
   return (
     <svg viewBox="0 0 220 104" role="presentation">
       {outer.map(([x, y], i) => (
-        <path key={`p${i}`} className="mo-flow" style={{ '--i': i }} d={`M110 56L${x} ${y}`} />
+        <path key={`p${i}`} className="pi-flow" style={{ '--i': i }} d={`M110 56L${x} ${y}`} />
       ))}
       {outer.map(([x, y], i) => (
-        <circle key={`n${i}`} className="mo-node" style={{ '--i': i }} cx={x} cy={y} r="6" />
+        <circle key={`n${i}`} className="pi-node" style={{ '--i': i }} cx={x} cy={y} r="6" />
       ))}
-      <circle className="mo-node" cx="110" cy="56" r="11" />
+      <circle className="pi-node" cx="110" cy="56" r="11" />
     </svg>
   );
 }
@@ -23,14 +23,14 @@ function Route() {
   const right = [20, 52, 84];
   return (
     <svg viewBox="0 0 220 104" role="presentation">
-      <path className="mo-flow" d="M44 52H94" />
+      <path className="pi-flow" d="M44 52H94" />
       {right.map((y, i) => (
-        <path key={`r${y}`} className="mo-flow" style={{ '--i': i + 1 }} d={`M126 52C148 52 154 ${y} 176 ${y}`} />
+        <path key={`r${y}`} className="pi-flow" style={{ '--i': i + 1 }} d={`M126 52C148 52 154 ${y} 176 ${y}`} />
       ))}
-      <rect className="mo-layer" x="10" y="38" width="34" height="28" rx="7" />
-      <circle className="mo-node" cx="110" cy="52" r="16" />
+      <rect className="pi-layer" x="10" y="38" width="34" height="28" rx="7" />
+      <circle className="pi-node" cx="110" cy="52" r="16" />
       {right.map((y, i) => (
-        <rect key={`m${y}`} className="mo-layer" style={{ '--i': i }} x="176" y={y - 8} width="34" height="16" rx="5" />
+        <rect key={`m${y}`} className="pi-layer" style={{ '--i': i }} x="176" y={y - 8} width="34" height="16" rx="5" />
       ))}
     </svg>
   );
@@ -39,8 +39,8 @@ function Route() {
 function Shield() {
   return (
     <svg viewBox="0 0 220 104" role="presentation">
-      <path className="mo-flow" d="M110 6L164 24V54C164 77 140 92 110 99C80 92 56 77 56 54V24Z" />
-      <path className="mo-lens" d="M90 54l14 14 28-30" />
+      <path className="pi-flow" d="M110 6L164 24V54C164 77 140 92 110 99C80 92 56 77 56 54V24Z" />
+      <path className="pi-lens" d="M90 54l14 14 28-30" />
     </svg>
   );
 }
@@ -50,18 +50,18 @@ function Plug() {
   return (
     <svg viewBox="0 0 220 104" role="presentation">
       {left.map((y, i) => (
-        <path key={`l${y}`} className="mo-flow" style={{ '--i': i }} d={`M40 ${y}C70 ${y} 80 52 104 52`} />
+        <path key={`l${y}`} className="pi-flow" style={{ '--i': i }} d={`M40 ${y}C70 ${y} 80 52 104 52`} />
       ))}
       {left.map((y, i) => (
-        <path key={`r${y}`} className="mo-flow" style={{ '--i': i + 3 }} d={`M116 52C140 52 150 ${y} 180 ${y}`} />
+        <path key={`r${y}`} className="pi-flow" style={{ '--i': i + 3 }} d={`M116 52C140 52 150 ${y} 180 ${y}`} />
       ))}
       {left.map((y, i) => (
-        <rect key={`a${y}`} className="mo-layer" style={{ '--i': i }} x="14" y={y - 8} width="26" height="16" rx="5" />
+        <rect key={`a${y}`} className="pi-layer" style={{ '--i': i }} x="14" y={y - 8} width="26" height="16" rx="5" />
       ))}
       {left.map((y, i) => (
-        <rect key={`b${y}`} className="mo-layer" style={{ '--i': i + 3 }} x="180" y={y - 8} width="26" height="16" rx="5" />
+        <rect key={`b${y}`} className="pi-layer" style={{ '--i': i + 3 }} x="180" y={y - 8} width="26" height="16" rx="5" />
       ))}
-      <circle className="mo-node" cx="110" cy="52" r="9" />
+      <circle className="pi-node" cx="110" cy="52" r="9" />
     </svg>
   );
 }
@@ -69,13 +69,13 @@ function Plug() {
 function Branch() {
   return (
     <svg viewBox="0 0 220 104" role="presentation">
-      <path className="mo-flow" d="M16 72H204" />
-      <path className="mo-flow" style={{ '--i': 1 }} d="M64 72C84 72 84 30 112 30H148C176 30 176 72 196 72" />
+      <path className="pi-flow" d="M16 72H204" />
+      <path className="pi-flow" style={{ '--i': 1 }} d="M64 72C84 72 84 30 112 30H148C176 30 176 72 196 72" />
       {[16, 64, 196].map((x, i) => (
-        <circle key={x} className="mo-node" style={{ '--i': i }} cx={x} cy="72" r="6" />
+        <circle key={x} className="pi-node" style={{ '--i': i }} cx={x} cy="72" r="6" />
       ))}
       {[112, 148].map((x, i) => (
-        <circle key={x} className="mo-node" style={{ '--i': i + 3 }} cx={x} cy="30" r="6" />
+        <circle key={x} className="pi-node" style={{ '--i': i + 3 }} cx={x} cy="30" r="6" />
       ))}
     </svg>
   );
@@ -86,7 +86,7 @@ const ICONS = { graph: Graph, route: Route, shield: Shield, plug: Plug, branch: 
 export default function ProjectIcon({ name }) {
   const Shape = ICONS[name] ?? Graph;
   return (
-    <div className="motif" aria-hidden="true">
+    <div className="project-icon" aria-hidden="true">
       <Shape />
     </div>
   );

@@ -1171,7 +1171,7 @@ a:hover > .arrow,
   }
 }
 
-.spin {
+.portrait {
   position: relative;
   width: 100%;
   margin: 0;
@@ -1184,23 +1184,23 @@ a:hover > .arrow,
   border-radius: 28px;
 }
 
-.spin.is-drag {
+.portrait.is-drag {
   cursor: grabbing;
 }
 
-.spin:focus-visible {
+.portrait:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 8px;
 }
 
-.spin__body {
+.portrait__body {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
   will-change: transform;
 }
 
-.spin__face {
+.portrait__face {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1211,12 +1211,12 @@ a:hover > .arrow,
   -webkit-backface-visibility: hidden;
 }
 
-.spin__front {
+.portrait__front {
   object-fit: cover;
   pointer-events: none;
 }
 
-.spin__back {
+.portrait__back {
   display: grid;
   place-items: center;
   transform: rotateY(180deg);
@@ -1227,6 +1227,6 @@ a:hover > .arrow,
   letter-spacing: -0.04em;
 }
 
-.spin__back span {
+.portrait__back span {
   color: var(--bg);
 }

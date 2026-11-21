@@ -241,20 +241,20 @@ export default function StoryView({ theme, toggleTheme, reduced, gl }) {
         menu={chapters}
       />
       <Rail active={screen.group} onJump={jump} items={chapters} />
-      <main id="main" tabIndex={-1} className="story">
+      <main id="main" tabIndex={-1} className="page">
         {screens.map((s, i) => {
           if (s.kind === 'hero') return wrap(i, <Hero onJump={jump} />);
           if (s.kind === 'about') return wrap(i, <About reduced={reduced} />);
-          if (s.kind === 'experience') return wrap(i, <Experience />, 'screen--stack');
-          if (s.kind === 'projects') return wrap(i, <Projects onOpen={open} />, 'screen--stack');
-          if (s.kind === 'background') return wrap(i, <Background />, 'screen--stack');
-          if (s.kind === 'skills') return wrap(i, <Skills />, 'screen--stack');
+          if (s.kind === 'experience') return wrap(i, <Experience />, 'screen--tight');
+          if (s.kind === 'projects') return wrap(i, <Projects onOpen={open} />, 'screen--tight');
+          if (s.kind === 'background') return wrap(i, <Background />, 'screen--tight');
+          if (s.kind === 'skills') return wrap(i, <Skills />, 'screen--tight');
           if (s.kind === 'contact') return wrap(i, <Contact />);
           return <Screen key={s.id} screen={s} index={i} active={current === i} />;
         })}
       </main>
       {snap && current > 0 && (
-        <div className="storybar" role="group" aria-label="Story position">
+        <div className="pager" role="group" aria-label="Page position">
           <button type="button" onClick={() => goTo(current - 1)} aria-label="Previous screen">
             <Arrow up />
           </button>

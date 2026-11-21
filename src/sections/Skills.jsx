@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal';
 
 export default function Skills() {
   return (
-    <section className="stack chapter">
+    <section className="skills chapter">
       <Heading>
         Tools I <em>use.</em>
       </Heading>

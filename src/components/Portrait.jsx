@@ -124,7 +124,7 @@ export default function Portrait({ front, alt, label, back, reduced }) {
   return (
     <figure
       ref={root}
-      className="spin"
+      className="portrait"
       role="group"
       aria-label={label}
       tabIndex={0}
@@ -134,9 +134,9 @@ export default function Portrait({ front, alt, label, back, reduced }) {
       onPointerCancel={up}
       onKeyDown={key}
     >
-      <div className="spin__body" ref={body}>
-        <img className="spin__face spin__front" src={front} alt={alt} width="900" height="900" loading="lazy" draggable="false" />
-        <div className="spin__face spin__back" aria-hidden="true">
+      <div className="portrait__body" ref={body}>
+        <img className="portrait__face portrait__front" src={front} alt={alt} width="900" height="900" loading="lazy" draggable="false" />
+        <div className="portrait__face portrait__back" aria-hidden="true">
           <span>{back}</span>
         </div>
       </div>
