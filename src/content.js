@@ -4,7 +4,7 @@ export const profile = {
   last: 'Kondisetty',
   role: 'Security engineer · AI systems',
   summary:
-    'At work I build an AI security assistant. In my own time I build tools that show the evidence behind their answers.',
+    'I build security software and AI systems: agents, connectors and the model gateway behind them.',
   email: 'gkondisetty@gmail.com',
   github: 'https://github.com/giri-kondisetty',
   linkedin: 'https://www.linkedin.com/in/giri-kondisetty/',
@@ -17,7 +17,7 @@ const yearsSince = (date) => Math.floor((Date.now() - date.getTime()) / (365.25 
 export const about = {
   paragraphs: [
     'I am a security software engineer. I have built security products since 2019, from endpoint detection to cloud security and, now, AI assistants, and I hold an MS in Computer Science from Boston University.',
-    'Outside work I build my own product, end to end: connectors to the platforms it queries, an AI agent that shows the evidence behind every answer, and a gateway that every model call goes through.',
+    'Outside work I build my own product, end to end: connectors to the platforms it queries, an AI agent, and a gateway that every model call goes through.',
     'I am originally from Andhra Pradesh, India. I like software that is simple to check and honest about what it could not see.',
   ],
   stats: [
@@ -40,7 +40,7 @@ export const projects = [
     title: 'Jarvis',
     kind: 'Then my own agent',
     icon: 'graph',
-    text: 'Existing AI agents did not fit, so I built my own. It shows the evidence behind every claim.',
+    text: 'Existing AI agents did not fit, so I built my own.',
     site: 'https://giri-kondisetty.github.io/jarvis/',
   },
   {
