@@ -65,6 +65,7 @@
   }
 
   .page .contact .footer {
+    margin-top: 0;
     padding-top: var(--screen-gap);
   }
 }
