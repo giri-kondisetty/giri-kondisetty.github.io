@@ -1,4 +1,5 @@
 import { chapters } from '../content';
+import './Rail.css';
 
 export default function Rail({ active, onJump, items = chapters }) {
   return (

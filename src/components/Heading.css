@@ -1,0 +1,22 @@
+.h2 {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.75rem, 6.4vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.h2 em {
+  font-style: italic;
+}
+
+.h2 em {
+  color: var(--accent);
+}
+
+@media (max-height: 860px) and (min-width: 1100px) {
+  .page .open .h2 {
+    font-size: clamp(2.5rem, 4.6vw, 4rem);
+  }
+}

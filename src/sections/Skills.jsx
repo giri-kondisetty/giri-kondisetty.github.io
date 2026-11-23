@@ -1,6 +1,8 @@
 import { skills } from '../content';
 import Heading from '../components/Heading';
 import Reveal from '../components/Reveal';
+import './Skills.css';
+import './rows.css';
 
 export default function Skills() {
   return (

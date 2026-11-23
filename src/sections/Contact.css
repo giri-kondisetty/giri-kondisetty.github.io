@@ -1,0 +1,56 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__body {
+  display: grid;
+  gap: 28px;
+  max-width: 760px;
+  margin-top: 36px;
+}
+
+.contact__mail {
+  width: fit-content;
+  font-family: var(--serif);
+  font-size: clamp(2.125rem, 5.6vw, 5.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 2px no-repeat;
+  transition: background-size 0.6s var(--ease), color 0.3s ease;
+  overflow-wrap: anywhere;
+}
+
+.contact__mail:hover {
+  background-size: 100% 2px;
+  color: var(--accent);
+}
+
+.contact__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: auto;
+  padding-top: 96px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+@media (max-height: 860px) {
+  .page .contact .h2 {
+    font-size: clamp(2.5rem, 4.6vw, 4rem);
+  }
+
+  .page .contact__mail {
+    font-size: clamp(2rem, 4.4vw, 3.6rem);
+  }
+}

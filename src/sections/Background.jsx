@@ -1,6 +1,8 @@
 import { certifications, education } from '../content';
 import Heading from '../components/Heading';
 import Reveal from '../components/Reveal';
+import './Background.css';
+import './rows.css';
 
 export default function Background() {
   return (

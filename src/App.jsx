@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import './story/story.css';
 import { chapters, screens } from './content';
 import Nav from './components/Nav';
 import Pager from './components/Pager';
@@ -18,6 +17,7 @@ import Experience from './sections/Experience';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
+import './App.css';
 
 const LINKS = chapters.filter((c) => c.id !== 'intro');
 const FIRST = {};

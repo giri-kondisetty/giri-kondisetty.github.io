@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import './Heading.css';
 
 export default function Heading({ children }) {
   return (

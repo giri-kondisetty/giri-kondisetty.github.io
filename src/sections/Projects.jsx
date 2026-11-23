@@ -3,6 +3,7 @@ import Arrow from '../components/Arrow';
 import Heading from '../components/Heading';
 import ProjectIcon from '../components/ProjectIcon';
 import Reveal from '../components/Reveal';
+import './Projects.css';
 
 function ArrowDown() {
   return (

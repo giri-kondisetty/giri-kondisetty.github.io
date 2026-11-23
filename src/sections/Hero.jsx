@@ -1,5 +1,6 @@
 import { profile } from '../content';
 import Magnetic from '../components/Magnetic';
+import './Hero.css';
 
 function Letters({ text, offset = 0 }) {
   return (

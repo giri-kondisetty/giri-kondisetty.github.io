@@ -1,6 +1,7 @@
 import { experience } from '../content';
 import Heading from '../components/Heading';
 import Reveal from '../components/Reveal';
+import './Experience.css';
 
 export default function Experience() {
   return (

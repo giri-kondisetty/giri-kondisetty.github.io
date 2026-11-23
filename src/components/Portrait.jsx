@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import './Portrait.css';
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 

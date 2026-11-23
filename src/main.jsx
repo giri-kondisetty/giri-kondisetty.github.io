@@ -4,7 +4,9 @@ import '@fontsource/instrument-serif/400.css';
 import '@fontsource/instrument-serif/400-italic.css';
 import '@fontsource-variable/inter-tight';
 import '@fontsource-variable/jetbrains-mono';
-import './styles.css';
+import './styles/tokens.css';
+import './styles/base.css';
+import './styles/buttons.css';
 import App from './App';
 
 createRoot(document.getElementById('root')).render(

@@ -1,0 +1,125 @@
+.screen {
+  position: relative;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.screen__inner {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 34rem) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding: clamp(88px, 12vh, 120px) var(--story-pad) clamp(72px, 10vh, 96px);
+}
+
+.screen--plain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.screen--tight .chapter {
+  min-height: auto;
+  padding-top: clamp(96px, 12vh, 120px);
+  padding-bottom: clamp(48px, 8vh, 72px);
+}
+
+.rise {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease calc(var(--r, 0) * 130ms), transform 0.85s var(--ease) calc(var(--r, 0) * 130ms);
+}
+
+.screen.is-active .rise {
+  opacity: 1;
+  transform: none;
+}
+
+.narr__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.narr__text {
+  margin-top: 14px;
+  font-size: clamp(1.0625rem, 1.2vw, 1.1875rem);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 86%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    transition: none;
+  }
+}
+
+.page .screen--plain .chapter {
+  min-height: 100svh;
+}
+
+@media (max-height: 860px) {
+  .page .screen--plain .chapter {
+    padding-top: 84px;
+    padding-bottom: 56px;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 1100px) {
+  .screen__inner {
+    padding-top: 84px;
+    padding-bottom: 60px;
+  }
+
+  .narr__title {
+    font-size: clamp(2.25rem, 3.4vw, 3rem);
+  }
+
+  .narr__text {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 1099px) {
+  .screen {
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+
+  .screen__inner {
+    display: block;
+    min-height: 82svh;
+    padding: 96px var(--edge) 40px;
+  }
+
+  .narr {
+    padding: 18px 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--bg) 84%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  .narr__title {
+    font-size: clamp(1.75rem, 7.4vw, 2.4rem);
+  }
+
+  .page .screen--plain .chapter {
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .page .screen--plain .chapter:not(.hero) {
+    padding-left: var(--story-pad);
+    padding-right: max(var(--story-pad), 140px);
+  }
+}

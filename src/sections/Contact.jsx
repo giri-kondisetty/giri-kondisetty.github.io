@@ -4,6 +4,7 @@ import Arrow from '../components/Arrow';
 import Heading from '../components/Heading';
 import Magnetic from '../components/Magnetic';
 import Reveal from '../components/Reveal';
+import './Contact.css';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);

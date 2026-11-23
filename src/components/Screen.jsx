@@ -1,3 +1,5 @@
+import './Screen.css';
+
 export default function Screen({ screen, index, active }) {
   return (
     <section id={screen.id} className={`screen ${active ? 'is-active' : ''}`} data-screen={index} aria-labelledby={`${screen.id}-title`}>

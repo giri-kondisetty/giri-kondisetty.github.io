@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import './ProgressBar.css';
 
 export default function ProgressBar() {
   const ref = useRef(null);

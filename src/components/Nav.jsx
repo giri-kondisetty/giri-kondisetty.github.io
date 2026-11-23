@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { profile } from '../content';
+import './Nav.css';
 
 function Sun() {
   return (

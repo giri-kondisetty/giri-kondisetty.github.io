@@ -1,3 +1,5 @@
+import './ProjectIcon.css';
+
 function Graph() {
   const outer = [
     [26, 24],

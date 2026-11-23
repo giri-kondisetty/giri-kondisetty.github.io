@@ -3,6 +3,7 @@ import Counter from '../components/Counter';
 import Heading from '../components/Heading';
 import Portrait from '../components/Portrait';
 import Reveal from '../components/Reveal';
+import './About.css';
 
 export default function About({ reduced }) {
   return (
