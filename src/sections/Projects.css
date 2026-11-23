@@ -138,10 +138,3 @@
     font-size: 1rem;
   }
 }
-
-@media (min-width: 1100px) {
-  .page .overview.chapter {
-    padding-top: clamp(92px, 11vh, 120px);
-    padding-bottom: clamp(40px, 6vh, 64px);
-  }
-}

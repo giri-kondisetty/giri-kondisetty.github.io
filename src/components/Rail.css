@@ -22,13 +22,16 @@
 }
 
 .rail__label {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
   opacity: 0;
   transform: translateX(6px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .rail a:hover .rail__label,
-.rail a.is-active .rail__label {
+.rail a:focus-visible .rail__label {
   opacity: 1;
   transform: none;
 }

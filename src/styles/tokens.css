@@ -5,6 +5,8 @@
   --gutter: max(22px, calc((100vw - 1240px) / 2));
   --edge: clamp(24px, 4vw, 72px);
   --story-pad: max(var(--edge), calc((100vw - 1560px) / 2));
+  --nav-clear: 76px;
+  --screen-gap: clamp(20px, 3.2vh, 36px);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 

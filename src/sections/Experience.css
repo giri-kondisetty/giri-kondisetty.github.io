@@ -73,11 +73,6 @@
 }
 
 @media (max-height: 760px) and (min-width: 1100px) {
-  .page .experience.chapter {
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-
   .page .experience .h2 {
     font-size: clamp(2.25rem, 4vw, 3.25rem);
   }

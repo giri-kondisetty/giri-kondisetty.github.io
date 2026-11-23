@@ -11,7 +11,7 @@
   grid-template-columns: minmax(0, 34rem) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
-  padding: clamp(88px, 12vh, 120px) var(--story-pad) clamp(72px, 10vh, 96px);
+  padding: calc(var(--nav-clear) + var(--screen-gap)) var(--story-pad) var(--screen-gap);
 }
 
 .screen--plain {
@@ -71,11 +71,6 @@
 }
 
 @media (max-height: 800px) and (min-width: 1100px) {
-  .screen__inner {
-    padding-top: 84px;
-    padding-bottom: 60px;
-  }
-
   .narr__title {
     font-size: clamp(2.25rem, 3.4vw, 3rem);
   }
@@ -119,7 +114,9 @@
 
 @media (min-width: 1100px) {
   .page .screen--plain .chapter:not(.hero) {
-    padding-left: var(--story-pad);
-    padding-right: max(var(--story-pad), 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--nav-clear) + var(--screen-gap)) var(--story-pad) var(--screen-gap);
   }
 }
