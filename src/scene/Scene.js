@@ -93,7 +93,7 @@ const PALETTES = {
 };
 const PALETTE_KEYS = Object.keys(PALETTES.light);
 
-const SKY = { form: 'cosmos', shift: 0, o: 0.24, oLight: 0.065, tilt: 0.88, rock: 0, still: 0, radius: 9.5, pad: 0, wide: 1 };
+const SKY = { form: 'cosmos', shift: 0, o: 0.18, oLight: 0.065, tilt: 0.88, rock: 0, still: 0, radius: 9.5, pad: 0, wide: 1 };
 const HUB = { form: 'galaxy', shift: 1, o: 0.55, tilt: 0.95, rock: 1, still: 0, radius: 4.4, pad: 210 };
 const BRAIN = { form: 'brain', shift: 1, o: 0.95, tilt: 0, rock: 1, still: 0, radius: 4.6, pad: 0 };
 const ORBITS = { form: 'orbits', shift: 1, o: 0.85, tilt: 0.35, rock: 1, still: 0, radius: 5.0, pad: 0 };
@@ -449,8 +449,9 @@ export class Scene {
     const dz = lerp(Math.min(Math.max(across, down, 15), 34), Math.min(reach, 70), wide);
     const x = this.compact ? 0 : (-weight * (this.centre - w / 2)) / ((h * 1.3735) / dz);
     const sway = Math.sin(t * 0.15) * 0.1 + this.pointerSmooth.x * 0.08;
-    this.camera.position.set(x + Math.sin(sway) * dz + this.pointerSmooth.x * 0.2, 0.8 - lift + this.pointerSmooth.y * 0.15, Math.cos(sway) * dz);
-    this.camera.lookAt(x, -lift, 0);
+    const drop = this.compact ? 0 : (38 * dz) / unit;
+    this.camera.position.set(x + Math.sin(sway) * dz + this.pointerSmooth.x * 0.2, 0.8 - lift + drop + this.pointerSmooth.y * 0.15, Math.cos(sway) * dz);
+    this.camera.lookAt(x, -lift + drop, 0);
     this.camera.updateMatrixWorld();
   }
 
